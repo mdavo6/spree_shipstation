@@ -2,7 +2,7 @@ Spree/ShipStation Integration
 ==============================
 [![TravisCI](https://travis-ci.org/MatthewKennedy/spree_shipstation.svg?branch=master)](https://travis-ci.org/MatthewKennedy/spree_shipstation) [![Code Climate](https://codeclimate.com/github/MatthewKennedy/spree_shipstation/badges/gpa.svg)](https://codeclimate.com/github/MatthewKennedy/spree_shipstation)
 
-This gem integrates [ShipStation](http://www.shipstation.com) with [Spree](http://spreecommerce.com). It enables ShipStation to pull shipments from the system and update tracking numbers. This integration is a fork of http://github.com/DynamoMTL/spree_shipstation to make compatible with Spree and Rails 5.1+.
+This gem integrates [ShipStation](http://www.shipstation.com) with [Spree](http://spreecommerce.com). It enables ShipStation to pull shipments from the Spree store and update tracking numbers. This integration is ported from the Solidus extention https://github.com/boomerdigital/solidus_shipstation and made compatible with Spree 3 and Rails 5.1+.
 
 See below for more documentation on the ShipStation API or how shipments and orders work in Spree:
 
