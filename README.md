@@ -1,6 +1,6 @@
 Spree/ShipStation Integration
 ==============================
-[![TravisCI](https://travis-ci.org/boomerdigital/spree_shipstation.svg?branch=master)](https://travis-ci.org/boomerdigital/spree_shipstation) [![Code Climate](https://codeclimate.com/github/boomerdigital/spree_shipstation/badges/gpa.svg)](https://codeclimate.com/github/boomerdigital/spree_shipstation)
+[![TravisCI](https://travis-ci.org/MatthewKennedy/spree_shipstation.svg?branch=master)](https://travis-ci.org/MatthewKennedy/spree_shipstation) [![Code Climate](https://codeclimate.com/github/MatthewKennedy/spree_shipstation/badges/gpa.svg)](https://codeclimate.com/github/MatthewKennedy/spree_shipstation)
 
 This gem integrates [ShipStation](http://www.shipstation.com) with [Spree](http://spreecommerce.com). It enables ShipStation to pull shipments from the system and update tracking numbers. This integration is a fork of http://github.com/DynamoMTL/spree_shipstation to make compatible with Spree and Rails 5.1+.
 
