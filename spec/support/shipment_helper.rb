@@ -1,5 +1,4 @@
 module Spree
-
   module ShipmentHelper
 
     def create_shipment(options = {})
@@ -9,5 +8,4 @@ module Spree
     end
 
   end
-
 end

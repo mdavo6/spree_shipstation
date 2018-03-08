@@ -3,13 +3,12 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_shipstation'
   s.version     = '1.0.0'
-  s.summary     = 'Spree 3/ShipStation Integration'
+  s.summary     = 'Spree/ShipStation Integration'
   s.description = 'Integrates ShipStation API with Spree. Supports exporting shipments and importing tracking numbers'
-  s.required_ruby_version = '>= 2.4.0'
+  s.required_ruby_version = '>= 2.4.1'
 
   s.author    = 'Matthew Kennedy'
-  s.email     = 'not@valable.com'
-  s.homepage  = 'https://github.com/MatthewKennedy/spree_shipstation'
+  s.homepage  = 'https://github.com/matthewkennedy/spree_shipstation'
 
   # s.files       = `git ls-files`.split("\n")
   # s.test_files  = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -32,5 +31,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'spree_auth_devise'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'timecop'
-
 end
