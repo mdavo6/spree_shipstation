@@ -21,7 +21,7 @@ module Spree
           xml.City       address.city
           xml.State      address.state ? address.state.abbr : address.state_name
           xml.PostalCode address.zipcode
-          xml.Country    address.country.iso
+          xml.Country    address.country.id
         end
 
         xml.Phone        address.phone

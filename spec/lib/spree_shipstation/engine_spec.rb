@@ -10,6 +10,7 @@ RSpec.describe SpreeShipstation::Engine do
       expect(Spree::Config).to respond_to(:shipstation_ssl_encrypted)
       expect(Spree::Config).to respond_to(:shipstation_capture_at_notification)
     end
+
   end
 
 end

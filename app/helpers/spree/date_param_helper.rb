@@ -1,4 +1,6 @@
+
 module Spree
+
   module DateParamHelper
 
     DATE_FORMAT = '%m/%d/%Y %H:%M %Z'.freeze
@@ -11,4 +13,5 @@ module Spree
     end
 
   end
+
 end

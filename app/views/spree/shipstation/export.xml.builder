@@ -1,6 +1,6 @@
 xml = Builder::XmlMarkup.new
 xml.instruct!
-xml.Orders(pages: (@shipments.total_count/50.0).ceil) {
+xml.Orders(pages: (@shipments.total_count / 50.0).ceil) {
   @shipments.each do |shipment|
     order = shipment.order
 
