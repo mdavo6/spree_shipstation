@@ -14,7 +14,7 @@ See below for more documentation on the ShipStation API or how shipments and ord
 
 ## Integration Overview
 
-`sopree_shipstation` exposes two API endpoints for ShipStation's Custom Store API to **pull** data from:
+`spree_shipstation` exposes two API endpoints for ShipStation's Custom Store API to **pull** data from:
 
 **GET /shipstation**
 Will return an XML formatted, paginated list of order/shipment details for the requested time frame and conforms to [ShipStation's specifed XML schema](https://help.shipstation.com/hc/en-us/articles/205928478-ShipStation-Custom-Store-Development-Guide#4b). However, in practice, ShipStation will use a narrow time frame (1 day) to request order updates. You can configure how often data is pulled in the ShipStation UI.
