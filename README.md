@@ -50,7 +50,7 @@ localhost:3000/shipstation?action=shipnotify&order_number=ABC123&carrier=USPS&se
 Add `spree_shipstation` to your Gemfile:
 
 ```ruby
-gem "spree_shipstation", github: 'MatthewKennedy/spree_shipstation'
+gem 'spree_shipstation', github: 'matthewkennedy/spree_shipstation'
 ```
 
 Then, bundle install
