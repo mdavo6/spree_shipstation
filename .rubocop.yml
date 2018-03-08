@@ -1,0 +1,53 @@
+AllCops:
+  Exclude:
+    - ".bundle/**/*" # Auto-generated
+    - "bin/**/*"     # Auto-generated
+    - "vendor/**/*"  # We cannot solve the world's problems
+    - "spec/dummy/**/*" # We cannot solve the world's problems
+    - "node_modules/**/*"
+Rails:
+  Enabled: true
+
+Lint/HandleExceptions:
+  Exclude:
+    - "config/unicorn/*"
+
+Metrics/AbcSize:
+  Max: 25
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "app/controllers/**/*" # We generally use compact style here
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    # These are naturally DSL-y, and so let's be lenient.
+    - "spec/**/*"
+    - "lib/tasks/*.rake"
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: empty_lines
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrivialAccessors:
+  ExactNameMatch: true
+
+Style/Documentation:
+  Enabled: false

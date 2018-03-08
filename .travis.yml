@@ -1,0 +1,10 @@
+sudo: false
+language: ruby
+rvm:
+  - 2.4.1
+before_script:
+  - bundle exec rake test_app
+env:
+  matrix:
+    - SPREE_BRANCH=master DB=postgres
+    - SPREE_BRANCH=master DB=mysql
