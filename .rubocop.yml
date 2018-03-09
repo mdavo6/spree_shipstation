@@ -3,8 +3,9 @@ AllCops:
     - ".bundle/**/*" # Auto-generated
     - "bin/**/*"     # Auto-generated
     - "vendor/**/*"  # We cannot solve the world's problems
-    - "spec/dummy/**/*" # We cannot solve the world's problems
+    - "spec/**/*" # We cannot solve the world's problems
     - "node_modules/**/*"
+    - "app/views/spree/shipstation/*"
 Rails:
   Enabled: true
 

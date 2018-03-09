@@ -150,6 +150,7 @@ To run tests with guard:
 
 ## Future Work
 
+- Fix tests
 - Improve documentation
 - Update legacy development patterns (ex: `class_eval`)
 - Update XML generation and parsing
