@@ -24,11 +24,7 @@ module Spree
 
     
     def shipnotify
-      notice = Spree::ShipmentNotice.new(params)
-     
-       respond_to do |format|
-         format.xml { render :status => :ok, layout: false }
-       end
+      notice = Spree::ShipmentNotice.new(params), head :ok
     end
 
   end
