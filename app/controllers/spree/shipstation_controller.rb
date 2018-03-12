@@ -27,7 +27,7 @@ module Spree
       notice = Spree::ShipmentNotice.new(params)
 
       if notice.apply
-        render(text: 'success')
+        render(text: 'success'), status: 200
       else
         render(text: notice.error, status: :bad_request)
       end
