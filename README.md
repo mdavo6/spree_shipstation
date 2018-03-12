@@ -117,12 +117,6 @@ that the shipment has backordered inventory units and the order is paid for. By 
 this extension will export shipments that are in the state of `pending` and will
 try to capture payments when a shipnotify notification is received.
 
-## Caveats
-
-1. Removed [#send_shipped_email](https://github.com/DynamoMTL/spree_shipstation/blob/master/app/models/spree/shipment_decorator.rb#L9), which was previously available in `spree_shipstation`
-2. If you change the shipping method of an order in ShipStation, the change will not be reflected in Spree and the tracking link might not work properly.
-3. Removed the ability to use `Spree::Order.number` as the ShipStation order number. We now use `Spree::Shipment.number`. This was previously available in `spree_shipstation`
-4. When capture of payments is enabled any error will prevent the update of the tracking number.
 
 ## Testing
 
@@ -150,7 +144,5 @@ To run tests with guard:
 
 ## Future Work
 
-- Fix tests
-- Improve documentation
-- Update legacy development patterns (ex: `class_eval`)
-- Update XML generation and parsing
+- Fix broken tests
+
