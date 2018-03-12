@@ -22,15 +22,13 @@ module Spree
       end
     end
 
-    # TODO: log when request are succeeding and failing
+    
     def shipnotify
       notice = Spree::ShipmentNotice.new(params)
-
-      if notice.apply
-        render(text: 'success')
-      else
-        render(text: notice.error, status: :bad_request)
-      end
+     
+       respond_to do |format|
+         format.xml { render :status => :ok, layout: false }
+       end
     end
 
   end
