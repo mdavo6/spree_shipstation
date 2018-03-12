@@ -22,20 +22,19 @@ module Spree
       end
     end
 
-    
+
     def shipnotify
-       notice = Spree::ShipmentNotice.new(params)
+      notice = Spree::ShipmentNotice.new(params)
      
-     if notice.apply
+      if notice.apply
+          respond_to do |format|
+             format.xml  { head :ok }
+          end
+       else
          respond_to do |format|
-            format.xml  { head :ok }
-         end
-      else
-        render(text: notice.error, status: :bad_request)
-      end
-     
-     
-         
+             format.xml  { :bad_request }
+          end
+       end   
     end
 
   end
