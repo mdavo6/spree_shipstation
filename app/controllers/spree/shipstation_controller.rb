@@ -8,7 +8,7 @@ module Spree
     include Spree::BasicSslAuthentication
     include Spree::DateParamHelper
 
-    protect_from_forgery with: :null_session, only: [:shipnotify]
+    protect_from_forgery with: :null_session, only: [:shipnotify], prepend: true
 
     def export
       @shipments = Spree::Shipment.exportable
