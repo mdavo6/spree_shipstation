@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.version     = '1.0.1'
   s.summary     = 'Spree/ShipStation Integration'
   s.description = 'Integrates ShipStation API with Spree. Supports exporting shipments and importing tracking numbers'
-  s.required_ruby_version = '>= 2.4.0'
+  s.required_ruby_version = '>= 2.2.7'
 
   s.author    = 'Matthew Kennedy'
   s.homepage  = 'https://github.com/matthewkennedy/spree_shipstation'
@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_bot', '~> 4.7'
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'launchy'
-  s.add_development_dependency 'mysql2'
+  s.add_development_dependency 'mysql2', '~> 0.3.18'
   s.add_development_dependency 'pg', '~> 0.18'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'pry'
