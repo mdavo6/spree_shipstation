@@ -47,18 +47,12 @@ describe Spree::Shipment do
       end
 
       let!(:incomplete_order) { create(:order, state: 'confirm') }
-      let!(:incomplete) { create_shipment(state: 'pending',
-                                          order: incomplete_order) }
-      let!(:pending) { create_shipment(state: 'pending',
-                                       order: create_complete_order) }
-      let!(:ready)   { create_shipment(state: 'ready',
-                                       order: create_complete_order) }
-      let!(:shipped) { create_shipment(state: 'shipped',
-                                       order: create_complete_order) }
-      let!(:canceled) { create_shipment(state: 'canceled',
-                                        order: create_complete_order) }
-
-      let(:query) { Spree::Shipment.exportable }
+      let!(:incomplete) { create_shipment(state: 'pending', order: incomplete_order) }
+      let!(:pending)    { create_shipment(state: 'pending', order: create_complete_order) }
+      let!(:ready)      { create_shipment(state: 'ready',   order: create_complete_order) }
+      let!(:shipped)    { create_shipment(state: 'shipped', order: create_complete_order) }
+      let!(:canceled)   { create_shipment(state: 'canceled',  order: create_complete_order) }
+      let(:query)       { Spree::Shipment.exportable }
 
       context 'given capture at notification is false' do
         before { Spree::Config.shipstation_capture_at_notification = false }
