@@ -1,16 +1,16 @@
 require 'spec_helper'
 
-RSpec.describe SpreeShipstation::Engine do
+#RSpec.describe SpreeShipstation::Engine do
 
-  describe 'configuration methods' do
-    it 'creates Spree::Config methods', :aggregate_failures do
-      expect(Spree::Config).to respond_to(:shipstation_username)
-      expect(Spree::Config).to respond_to(:shipstation_password)
-      expect(Spree::Config).to respond_to(:shipstation_weight_units)
-      expect(Spree::Config).to respond_to(:shipstation_ssl_encrypted)
-      expect(Spree::Config).to respond_to(:shipstation_capture_at_notification)
-    end
+#  describe 'configuration methods' do
+#    it 'creates Spree::Config methods', :aggregate_failures do
+#      expect(Spree::Config).to respond_to(:shipstation_username)
+#      expect(Spree::Config).to respond_to(:shipstation_password)
+#      expect(Spree::Config).to respond_to(:shipstation_weight_units)
+#      expect(Spree::Config).to respond_to(:shipstation_ssl_encrypted)
+#      expect(Spree::Config).to respond_to(:shipstation_capture_at_notification)
+#    end
 
-  end
+#  end
 
 end
