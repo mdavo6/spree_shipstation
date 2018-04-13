@@ -11,7 +11,7 @@ describe Spree::ShipstationController, type: :controller do
     @request.env['HTTP_ACCEPT'] = 'application/xml'
   end
 
-#  context 'logged in' do
+  context 'logged in' do
 
 #    before { login }
 
