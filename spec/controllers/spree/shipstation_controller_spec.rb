@@ -61,25 +61,25 @@ describe Spree::ShipstationController, type: :controller do
 #          { order_number: order_number, tracking_number: tracking_number }
 #        end
 
-        before do
-          allow(order).to receive(:can_ship?) { true }
-          allow(order).to receive(:paid?) { true }
-          shipment.ready!
+#        before do
+#          allow(order).to receive(:can_ship?) { true }
+#          allow(order).to receive(:paid?) { true }
+#          shipment.ready!
 
-          post :shipnotify, params: params
-        end
+#          post :shipnotify, params: params
+#        end
 
-        it 'updates the shipment', :aggregate_failures do
-          expect(shipment.reload.tracking).to eq(tracking_number)
-          expect(shipment.state).to eq('shipped')
-          expect(shipment.shipped_at).to be_present
-        end
+#        it 'updates the shipment', :aggregate_failures do
+#          expect(shipment.reload.tracking).to eq(tracking_number)
+#          expect(shipment.state).to eq('shipped')
+#          expect(shipment.shipped_at).to be_present
+#        end
 
-        it 'responds with success' do
-          expect(response).to be_success
-          expect(response.body).to match(/success/)
-        end
-      end
+#        it 'responds with success' do
+#          expect(response).to be_success
+#          expect(response.body).to match(/success/)
+#        end
+#      end
 
   #    context 'shipment not found' do
   #      let(:invalid_params) do
