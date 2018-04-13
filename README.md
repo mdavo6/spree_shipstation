@@ -80,12 +80,6 @@ Spree.config do |config|
 
   # Captures payment when ShipStation notifies a shipping label creation, defaults to false
   config.shipstation_capture_at_notification = false
-
-  # Spree::Core related configuration
-  # Both of these Spree::Core configuration options will affect which shipment records
-  # are pulled by ShipStation
-  config.require_payment_to_ship = true # false if not using auto_capture for payment gateways, defaults to true
-  config.track_inventory_levels = true # false if not using inventory tracking features, defaults to true
  
 end
 ```
