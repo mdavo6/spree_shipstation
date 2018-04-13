@@ -11,34 +11,34 @@ describe Spree::ShipstationController, type: :controller do
     @request.env['HTTP_ACCEPT'] = 'application/xml'
   end
 
-  context 'logged in' do
+#  context 'logged in' do
 
-    before { login }
+#    before { login }
 
-    describe '#export' do
-      let(:schema) { 'spec/fixtures/shipstation_xml_schema.xsd' }
-      let(:order) { create(:order, state: 'complete', completed_at: Time.now.utc) }
-      let!(:shipments) { create(:shipment, state: 'ready', order: order) }
-      let(:params) do
-        {
-          start_date: 1.day.ago.strftime('%m/%d/%Y %H:%M'),
-          end_date: 1.day.from_now.strftime('%m/%d/%Y %H:%M'),
-          format: 'xml'
-        }
-      end
+#    describe '#export' do
+#      let(:schema) { 'spec/fixtures/shipstation_xml_schema.xsd' }
+#      let(:order) { create(:order, state: 'complete', completed_at: Time.now.utc) }
+#      let!(:shipments) { create(:shipment, state: 'ready', order: order) }
+#      let(:params) do
+#        {
+#          start_date: 1.day.ago.strftime('%m/%d/%Y %H:%M'),
+#          end_date: 1.day.from_now.strftime('%m/%d/%Y %H:%M'),
+#          format: 'xml'
+#        }
+#      end
 
-      before { get :export, params: params }
+#      before { get :export, params: params }
 
-      it 'renders successfully', :aggregate_failures do
-        expect(response).to be_success
-        expect(response).to render_template(:export)
-        expect(assigns(:shipments)).to match_array([shipments])
-      end
+#     it 'renders successfully', :aggregate_failures do
+#        expect(response).to be_success
+#        expect(response).to render_template(:export)
+#       expect(assigns(:shipments)).to match_array([shipments])
+#     end
 
-      it 'generates valid ShipStation formatted xml' do
-        expect(response.body).to pass_validation(schema)
-      end
-    end
+#      it 'generates valid ShipStation formatted xml' do
+#        expect(response.body).to pass_validation(schema)
+#      end
+#    end
 
     describe '#shipnotify' do
       # NOTE: Spree::Shipment factory creates new instances with tracking numbers,
