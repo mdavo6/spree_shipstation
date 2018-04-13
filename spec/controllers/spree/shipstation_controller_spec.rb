@@ -92,8 +92,8 @@ describe Spree::ShipstationController, type: :controller do
   #        expect(response.body).to match(I18n.t(:shipment_not_found, number: 'JJ123456'))
   #      end
   #    end
+  #  end
    
-    end
   end
 
   context 'not logged in' do
