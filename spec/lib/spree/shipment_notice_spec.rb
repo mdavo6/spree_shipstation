@@ -97,7 +97,8 @@ describe Spree::ShipmentNotice do
         end
 
         it 'returns true' do
-          expect(response.status).to eq 200
+          expect(notice.status).to eq 200
+
         end
 
       end
