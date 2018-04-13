@@ -8,9 +8,6 @@ See below for more documentation on the ShipStation API or how shipments and ord
 
 - [ShipStation Custom Store Overview](https://help.shipstation.com/hc/en-us/articles/205928478#1c)
 - [ShipStation Custom Store Dev Guide](https://app.shipstation.com/content/integration/ShipStationCustomStoreDevGuide.pdf)
-- [Spree::Order State Machine](https://guides.spreecommerce.com/developer/orders.html#the-order-state-machine)
-- [Spree::Shipment States](https://guides.spreecommerce.com/developer/shipments.html#overview)
-
 
 ## Integration Overview
 
@@ -64,17 +61,20 @@ Configure your ShipStation integration:
 Spree.config do |config|
 
   # ShipStation Configuration
-  #
   # choose between Grams, Ounces or Pounds
   config.shipstation_weight_units = "Grams"
 
   # ShipStation expects the endpoint to be protected by HTTP Basic Auth. Set the
-  # username and password you desire for ShipStation to use. You should also place these
-  # values in to your `secrets.yml` file to make they configurable between stage/production
-  # environments for testing purposes.
-  config.shipstation_username = "smoking_jay_cutler"
-  config.shipstation_password = "my-awesome-password"
-
+  # username and password you desire for ShipStation to use
+ if Rails.env.production?
+  # You should set these in your Heroku Config Variables
+  config.shipstation_username = ENV['SHIPSTATION_USERNAME']
+  config.shipstation_password = ENV['SHIPSTATION_PASSWORD']
+ else
+  config.shipstation_username = "MyUserName"
+  config.shipstation_password = "MySuperSecurePassword123"
+ end
+  
   # Turn on/off SSL requirepments for testing and development purposes
   config.shipstation_ssl_encrypted = !Rails.env.development?
 
@@ -86,6 +86,7 @@ Spree.config do |config|
   # are pulled by ShipStation
   config.require_payment_to_ship = true # false if not using auto_capture for payment gateways, defaults to true
   config.track_inventory_levels = true # false if not using inventory tracking features, defaults to true
+ 
 end
 ```
 
@@ -144,5 +145,5 @@ To run tests with guard:
 
 ## Future Work
 
-- Fix broken tests
+- Write better tests.
 
