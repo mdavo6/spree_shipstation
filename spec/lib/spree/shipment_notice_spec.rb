@@ -90,6 +90,7 @@ describe Spree::ShipmentNotice do
 
       context 'transition succeeds' do
         before do
+          expect(shipment).to receive(:update_attribute).with(:tracking, tracking_number)
 
           expect(order).to receive(:update!)
         end
