@@ -94,7 +94,7 @@ describe Spree::ShipmentNotice do
           expect(order).to receive(:update!)
         end
 
-        it 'returns true' do
+        it 'returns true -- Needs FIX' do
           expect(notice.apply).to eq false # THIS SHOULD == TRUE 
          
         end
