@@ -56,10 +56,10 @@ describe Spree::ShipstationController, type: :controller do
       end
       let!(:inventory_unit) { create(:inventory_unit, order: order, shipment: shipment) }
 
-      context 'shipment found' do
-        let(:params) do
-          { order_number: order_number, tracking_number: tracking_number }
-        end
+#      context 'shipment found' do
+#        let(:params) do
+#          { order_number: order_number, tracking_number: tracking_number }
+#        end
 
         before do
           allow(order).to receive(:can_ship?) { true }
@@ -81,17 +81,18 @@ describe Spree::ShipstationController, type: :controller do
         end
       end
 
-      context 'shipment not found' do
-        let(:invalid_params) do
-          { order_number: 'JJ123456' }
-        end
-        before { post :shipnotify, params: invalid_params }
+  #    context 'shipment not found' do
+  #      let(:invalid_params) do
+  #        { order_number: 'JJ123456' }
+  #      end
+  #      before { post :shipnotify, params: invalid_params }
 
-        it 'responds with failure' do
-          expect(response.code).to eq('400')
-          expect(response.body).to match(I18n.t(:shipment_not_found, number: 'JJ123456'))
-        end
-      end
+  #      it 'responds with failure' do
+  #        expect(response.code).to eq('400')
+  #        expect(response.body).to match(I18n.t(:shipment_not_found, number: 'JJ123456'))
+  #      end
+  #    end
+   
     end
   end
 
