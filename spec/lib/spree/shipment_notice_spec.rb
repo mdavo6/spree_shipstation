@@ -9,69 +9,69 @@ describe Spree::ShipmentNotice do
                        tracking_number: tracking_number)
   end
 
-  context 'capture at notification is true' do
-    before do
-      Spree::Config.shipstation_capture_at_notification = true
-    end
+#  context 'capture at notification is true' do
+#    before do
+#      Spree::Config.shipstation_capture_at_notification = true
+#    end
 
-    context 'successful capture' do
-      it 'payments are completed' do
-        order = create(:completed_order_with_pending_payment)
-        notice = define_shipment_notice(order)
-        expect(notice.apply).to eq(true)
+#    context 'successful capture' do
+#      it 'payments are completed' do
+#        order = create(:completed_order_with_pending_payment)
+#        notice = define_shipment_notice(order)
+#        expect(notice.apply).to eq(true)
 
-        order.reload.shipments.each do |shipment|
-          expect(shipment).to be_shipped
-        end
-        order.payments.each do |payment|
-          expect(payment.reload).to be_completed
-        end
-        expect(order).to be_paid
-      end
-    end
+#        order.reload.shipments.each do |shipment|
+#          expect(shipment).to be_shipped
+#        end
+#        order.payments.each do |payment|
+#          expect(payment.reload).to be_completed
+#        end
+#        expect(order).to be_paid
+#      end
+#    end
 
-    context 'capture fails' do
-      it "doesn't ship the shipment" do
-        order = create(:completed_order_with_pending_payment)
-        notice = define_shipment_notice(order)
+#    context 'capture fails' do
+#      it "doesn't ship the shipment" do
+#        order = create(:completed_order_with_pending_payment)
+#        notice = define_shipment_notice(order)
 
-        expect_any_instance_of(Payment).to receive(:capture!).and_raise(Spree::Core::GatewayError)
-        expect(notice.apply).to eq(false)
+#        expect_any_instance_of(Payment).to receive(:capture!).and_raise(Spree::Core::GatewayError)
+#        expect(notice.apply).to eq(false)
 
-        order.reload.shipments.each do |shipment|
-          expect(shipment).to_not be_shipped
-        end
-        order.payments.each do |payment|
-          expect(payment.reload).to_not be_completed
-        end
-        expect(order).to_not be_paid
-      end
-    end
-  end
+#        order.reload.shipments.each do |shipment|
+#          expect(shipment).to_not be_shipped
+#        end
+#        order.payments.each do |payment|
+#          expect(payment.reload).to_not be_completed
+#        end
+#        expect(order).to_not be_paid
+#      end
+#    end
+#  end
 
-  context 'capture at notification is false' do
-    before do
-      Spree::Config.shipstation_capture_at_notification = false
-    end
+#  context 'capture at notification is false' do
+#    before do
+#      Spree::Config.shipstation_capture_at_notification = false
+#    end
 
-    context 'order is not paid' do
-      it "doesn't ship the shipment" do
-        order = create(:completed_order_with_pending_payment)
-        notice = define_shipment_notice(order)
+#    context 'order is not paid' do
+#      it "doesn't ship the shipment" do
+#        order = create(:completed_order_with_pending_payment)
+#        notice = define_shipment_notice(order)
 
-        expect(notice.apply).to eq(false)
+#        expect(notice.apply).to eq(false)
 
-        order.reload.shipments.each do |shipment|
-          expect(shipment).to_not be_shipped
-        end
-        order.payments.each do |payment|
-          expect(payment.reload).to_not be_completed
-        end
-        expect(order).to_not be_paid
-        expect(notice.error).to be_present
-      end
-    end
-  end
+#        order.reload.shipments.each do |shipment|
+#          expect(shipment).to_not be_shipped
+#        end
+#        order.payments.each do |payment|
+#          expect(payment.reload).to_not be_completed
+#        end
+#        expect(order).to_not be_paid
+#        expect(notice.error).to be_present
+#      end
+#    end
+#  end
 
   context '#apply' do
     let(:order_number) { 'S12345' }
