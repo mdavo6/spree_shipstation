@@ -9,7 +9,7 @@ addons:
   chrome: stable
 
 env:
-  - DB=mysql
+ # - DB=mysql
   - DB=postgres
 
 language: ruby

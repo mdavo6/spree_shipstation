@@ -91,13 +91,11 @@ describe Spree::ShipmentNotice do
       context 'transition succeeds' do
         before do
           expect(shipment).to receive(:update_attribute).with(:tracking, tracking_number)
-          expect(shipment).to receive_message_chain(:reload, :ship!)
-          expect(shipment).to receive(:touch).with(:shipped_at)
-          expect(order).to receive(:update!)
+
         end
 
         it 'returns true' do
-          expect(notice.apply).to eq 200
+          expect(notice.apply).to eq true
          
         end
 
