@@ -15,6 +15,7 @@ xml.Orders(pages: (@shipments.total_count / 50.0).ceil) {
       xml.TaxAmount      order.tax_total
       xml.ShippingAmount order.ship_total
       xml.CustomField1   order.number
+      xml.CustomerNotes  order.special_instructions
 
 =begin
       if order.gift?
