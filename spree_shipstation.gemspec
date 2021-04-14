@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_shipstation'
-  s.version     = '1.0.1'
+  s.version     = '1.0.2'
   s.summary     = 'Spree/ShipStation Integration'
   s.description = 'Integrates ShipStation API with Spree. Supports exporting shipments and importing tracking numbers'
   s.required_ruby_version = '>= 2.2.7'
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  spree_version = '>= 3.1.0'
+  spree_version = '~> 3.2.0'
   s.add_dependency 'spree_core', spree_version
   s.add_dependency 'spree_backend', spree_version
   s.add_dependency 'spree_frontend', spree_version
